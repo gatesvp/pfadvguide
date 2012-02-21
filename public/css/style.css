@@ -6,7 +6,7 @@ padding:0;
 font-family: Verdana, Arial, sans-serif;
 color: #000;
 font-size:90%;
-background: #FFFDF6 url(images/flower2.jpg) no-repeat 1% 94%;
+/*background: #FFFDF6 url(images/flower2.jpg) no-repeat 1% 94%;*/
 
 }
 /* Structure */
@@ -61,7 +61,7 @@ font-size: 0.85em;
 /* Link Styles */
 
 a {
-	color: #BCB79A;
+	color: #8B8D88;
 	background-color: transparent;
 	text-decoration: none;
 	font-weight: bold;
@@ -69,7 +69,7 @@ a {
 a:hover {
 		color: #8B8D88;
 		background-color: transparent;
-		
+		text-decoration: underline;
 }
 
 /* Other Styles */
@@ -85,7 +85,7 @@ padding: 0;
 #header h1 {
 width: 100%;
 height: 100px;
-background: transparent url(images/header.gif) no-repeat 0% 20%;
+/*background: transparent url(images/header.gif) no-repeat 0% 20%;*/
 margin: 0 0 0 10px;
 padding: 30px 0 0 90px;
 color: #F9F5DE;
@@ -114,6 +114,17 @@ h1 {
 	
 }
 
+
+h2 {
+	color: #8B8D88;
+	font-size: 1.0em;
+	text-align: left;
+	margin: 0 10px 15px 10px;
+	padding: 15px 10px 1px 0;
+	background-color: transparent;
+	
+}
+
 p {
 	padding: 5px 10px;
 	margin: 0;
@@ -121,16 +132,16 @@ p {
 }
 
 ul {
-list-style-type:none;
-margin:0;
-padding-left: 10px;
+	list-style-type:none;
+	margin:0;
+	padding-left: 10px;
 }
 
 ul li {
-margin-left:10px;
-padding-left: 20px;
-line-height: 20px;
-background:transparent url('images/bullet2.gif') no-repeat 1% 50%;
+	margin-left:10px;
+	padding-left: 20px;
+	line-height: 20px;
+	background:transparent url('images/bullet2.gif') no-repeat 1% 5px;
 }
 
 #right h2 {
