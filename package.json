@@ -1,0 +1,11 @@
+{
+  "name": "pfadvguide",
+  "description": "A player's guide to adventuring in the Pathfinder roleplaying system",
+  "author": "Gaetan Voyer-Perrault <gatesvp@gmail.com>",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "2.5.x",
+    "jade": "0.20.0"
+  },
+  "engine": "node >= 0.6.6"
+}
