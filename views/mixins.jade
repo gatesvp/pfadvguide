@@ -1,0 +1,38 @@
+mixin magic_item_table(bonuses, costs, notes)
+  table.magic_items
+    thead
+      tr
+        each b in bonuses
+          if b > 0
+            th.magic_items_bonus +#{b}
+          else if b < 0
+            th -#{b}
+          else
+            th #{b}
+    tbody
+      tr
+        each c in costs
+          td.magic_items_cost #{c} gp
+        if notes
+          td!= notes
+
+mixin magic_item_table_vertical(bonuses, costs, notes, header)
+  table.magic_items
+    if header
+      thead
+        tr
+          th Bonus
+          th Cost
+          th Notes
+    tbody
+      each b, i in bonuses
+        tr
+          if b > 0
+            td.magic_items_bonus +#{b}
+          else if b < 0
+            td -#{b}
+          else
+            td #{b}
+          td.magic_items_cost #{costs[i]} gp
+          td.magic_items_note!= notes[i]
+
