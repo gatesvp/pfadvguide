@@ -22,14 +22,15 @@ testMobile = function(ua){
 
 app.get('*', function(req, res, next) {
   var ua = req.header('user-agent');
+  var parsed = url.parse(req.url);
 
   var layout = true;
 
-  if(testMobile(ua)) {
+  if(testMobile(ua) || req.headers.host.substring(0,1) == "m") {
     layout = 'mobile';
   }
 
-  var pathname = url.parse(req.url).pathname;
+  var pathname = parsed.pathname;
 //  res.end(pathname);
   if(!pathname || pathname === '/'){
     res.render('index', {'layout': layout, 'pathname': pathname});
