@@ -1,3 +1,41 @@
+mixin magic_item_table(bonuses, costs, notes)
+  table.magic_items
+    thead
+      tr
+        each b in bonuses
+          if b > 0
+            th.magic_items_bonus +#{b}
+          else if b < 0
+            th -#{b}
+          else
+            th #{b}
+    tbody
+      tr
+        each c in costs
+          td.magic_items_cost #{c} gp
+        if notes
+          td!= notes
+
+mixin magic_item_table_vertical(bonuses, costs, notes, header)
+  table.magic_items
+    if header
+      thead
+        tr
+          th Bonus
+          th Cost
+          th Notes
+    tbody
+      each b, i in bonuses
+        tr
+          if b > 0
+            td.magic_items_bonus +#{b}
+          else if b < 0
+            td -#{b}
+          else
+            td #{b}
+          td.magic_items_cost #{costs[i]} gp
+          td.magic_items_note!= notes[i]
+
 h1 Strength
 
 h1 Bonuses / modifiers
@@ -8,11 +46,13 @@ p Strength provides a modifier to the following actions:
     li <a href='/combat/damage'>Damage rolls</a> with melee or thrown weapons
     li <a href='http://www.d20pfsrd.com/skills/climb'>Climb skill</a>
     li <a href='http://www.d20pfsrd.com/skills/swim'>Swim skill</a>
-    li Combat Maneuvers
+    li <a href='/combat/maneuvers'>Combat Maneuvers</a>
 
 h1 Improving your Strength
 
-p There are several avenues for improving this ability. The abilities within a category do not stack. You cannot have two enhancement bonuses active at once, only the largest bonus takes effect
+p There are several avenues for improving this ability. The abilities within a category do not stack. You cannot have two enhancement bonuses active at once, only the largest bonus takes effect.
+
+p In general, magical items are the easiest way to start boosting your stats.
 
 p Note that every two points of ability improvement provides a one point modifier to the relevant abilities listed above.
 
@@ -21,6 +61,7 @@ h2 Racial bonuses
 p The following races receive racial bonsues to their strength.
 
 ul
+  li <a href="http://www.d20pfsrd.com/races/core-races/human">Human</a>, <a href="http://www.d20pfsrd.com/races/core-races/half-elf">Half-elf</a>, <a href="http://www.d20pfsrd.com/races/core-races/half-orc">Half-orc</a> (<i>must pick this bonus</i>)
   li <a href="http://www.d20pfsrd.com/races/3rd-party-races/adamant-entertainment/half-ogre">Half-ogre</a>
 
 h2 Enhancment bonuses
@@ -28,14 +69,34 @@ h2 Enhancment bonuses
 p The following items and spells provide an enhancement bonus. Generally the highest enhancement bonus available is +6.
 
 ul
-  li <a href="http://www.d20pfsrd.com/magic/all-spells/b/bull-s-strength">Bull's Strength</a> spell (+4)
-  li <a href="http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/a-b/belt-of-giant-strength">Belt of Giant Strength</a><br />(4,000 gp (<b>+2</b>)  / 16,000 gp (<b>+4</b>) / 36,000 gp (<b>+6</b>))
-  li <a href="http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/a-b/belt-of-physical-might">Belt of Physical Might</a><br />This belt improves both Strength and one other physical attribute<br />(10,000 gp (+2) / 40,000 gp (+4) / 90,000 gp (+6))
+  li <b>Spell</b>: <a href="http://www.d20pfsrd.com/magic/all-spells/b/bull-s-strength">Bull's Strength</a> (<span class="magic_items_bonus">+4</span>)
+  li <b>Scroll</b>: <a href="http://www.d20pfsrd.com/magic/all-spells/b/bull-s-strength">Bull's Strength</a> scroll.
+    mixin magic_item_table_vertical([4],[150],["3 min duration (<i>add 50 gp for each additional min</i>)"])
+  li <b>Potion</b>: <a href="http://www.d20pfsrd.com/magic/all-spells/b/bull-s-strength">Bull's Strength</a> potion
+    mixin magic_item_table_vertical([4],[300],["3 min duration (<i>add 100 gp for each additional min</i>)"])
+  li <b>Wand</b>: <a href="http://www.d20pfsrd.com/magic/all-spells/b/bull-s-strength">Bull's Strength</a> wand
+    mixin magic_item_table_vertical([4],[4500],["3 min duration (<i>add 1500 gp for each additional min</i>)"])
+  li <b>Magical Belts</b>:
+    ul
+      li <a href="http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/a-b/belt-of-giant-strength">Belt of Giant Strength</a>
+        mixin magic_item_table([2,4,6],[4000,16000,36000])
+      li <a href="http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/a-b/belt-of-physical-might">Belt of Physical Might</a><br />This belt improves two physical stats, so two of Str, Dex AND Con.
+        mixin magic_item_table([2,4,6],[10000,40000,90000])
+      li <a href="http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/a-b/belt-of-physical-perfection">Belt of Physical Perfection</a><br />This belt improves all three physical attribute (Str, Dex AND Con).
+        mixin magic_item_table([2,4,6],[16000,64000,144000])
 
 h2 Inherent bonuses
 
 ul
-  li <a href="http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/a-b/book-manual-of-gainful-exercise">Manual of Gainful Exercise</a>, magical item.<br />(<i>27,500 gp (<b>+1</b>) / 55,000 gp (<b>+2</b>) / 82,500 gp (<b>+3</b>) / 110,000 gp (<b>+4</b>) / 137,500 gp (<b>+5</b>)</i>)
-  li ???
+  li <a href="http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/a-b/book-manual-of-gainful-exercise">Manual of Gainful Exercise</a>, magical item.
+    mixin magic_item_table([1,2,3,4,5],[27500,55000,82500,110000,137500])
+  li <a href="http://www.d20pfsrd.com/classes/core-classes/sorcerer">Sorcerer Bloodlines</a>: some sorcerer bloodlines provide inherent bonuses to a particular stat. One example of this would be the <a href="http://www.d20pfsrd.com/classes/core-classes/sorcerer/bloodlines/bloodlines-from-paizo/abyssal-bloodline">Abyssal Bloodline</a>.
 
+
+h2 Untyped bonuses
+
+p The untyped bonus is in a category of its own and stacks with all other bonuses.
+
+ul
+  li <b>Level bonus</b><br />Every fourth level (4, 8, 12, 16, 20), the character can increase one stat by one point. <i>Note that this is only 1 point, stats typically need to be increased by two points to improve relevant abilities.</i>
 

@@ -226,3 +226,28 @@ border:1px solid #F9F5DE;
 margin:4px 7px 3px 5px;
 padding:2px;
 }
+
+/* Magic Item table formatting */
+table.magic_items {
+  border: 1px solid #F9F5DE;
+}
+
+table.magic_items th {
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+table.magic_items td {
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.magic_items_bonus {
+  background-color: #8B8D88;
+  color: #eee;
+}
+
+.magic_items_cost {
+
+}
+
