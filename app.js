@@ -26,12 +26,12 @@ app.get('*', function(req, res, next) {
 
   var layout = true;
 
-  if(testMobile(ua) || req.headers.host.substring(0,1) == "m") {
+  if(testMobile(ua) || req.headers.host.substring(0,1).toLowerCase() == "m") {
     layout = 'mobile';
   }
 
-  var pathname = parsed.pathname;
-//  res.end(pathname);
+  var pathname = parsed.pathname.toLowerCase(); // make matching case insenstive
+  
   if(!pathname || pathname === '/'){
     res.render('index', {'layout': layout, 'pathname': pathname});
   }
