@@ -1,18 +1,23 @@
 include ../mixins
 
-h1 Strength
+h1 Dexterity
 
 h1 Bonuses / modifiers
 
-p Strength provides a modifier to the following actions:
+p Dexterity provides a modifier to the following actions:
   ul
-    li <a href='/combat/base'>Base attack bonus</a> for melee weapons
-    li <a href='/combat/damage'>Damage rolls</a> with melee or thrown weapons
-    li <a href='http://www.d20pfsrd.com/skills/climb'>Climb skill</a>
-    li <a href='http://www.d20pfsrd.com/skills/swim'>Swim skill</a>
-    li <a href='/combat/maneuvers'>Combat Maneuvers</a>
+    li <a href='/combat/base'>Base attack bonus</a> for ranged weapons
+    li <a href='/def/ac'>Armor class</a>, specifically provides a Dexterity Bonus to AC
+    li <a href='/def/ref'>Reflex saving throws</a>
+    li <a href='http://www.d20pfsrd.com/skills/acrobatics'>Acrobatics skill</a>
+    li <a href='http://www.d20pfsrd.com/skills/disable_device'>Disable Device skill</a>
+    li <a href='http://www.d20pfsrd.com/skills/escape_artist'>Escape Artist skill</a>
+    li <a href='http://www.d20pfsrd.com/skills/fly'>Fly skill</a>
+    li <a href='http://www.d20pfsrd.com/skills/ride'>Ride skill</a>
+    li <a href='http://www.d20pfsrd.com/skills/seight_of_hand'>Sleight of Hand skill</a>
+    li <a href='http://www.d20pfsrd.com/skills/stealth'>Stealth skill</a>
 
-h1 Improving your Strength
+h1 Improving your Dexterity
 
 p There are several avenues for improving this ability. The abilities within a category do not stack. You cannot have two enhancement bonuses active at once, only the largest bonus takes effect.
 
@@ -26,22 +31,24 @@ p The following races receive racial bonsues to their strength.
 
 ul
   li <a href="http://www.d20pfsrd.com/races/core-races/human">Human</a>, <a href="http://www.d20pfsrd.com/races/core-races/half-elf">Half-elf</a>, <a href="http://www.d20pfsrd.com/races/core-races/half-orc">Half-orc</a> (<i>must pick this bonus</i>)
+  li <a href="http://www.d20pfsrd.com/races/core-races/elf">Elf</a>
+  li <a href="http://www.d20pfsrd.com/races/core-races/halfling">Halfling</a>
 
 h2 Enhancment bonuses
 
 p The following items and spells provide an enhancement bonus. Generally the highest enhancement bonus available is +6.
 
 ul
-  li <b>Spell</b>: <a href="http://www.d20pfsrd.com/magic/all-spells/b/bull-s-strength">Bull's Strength</a> (<span class="magic_items_bonus">+4</span>)
-  li <b>Scroll</b>: <a href="http://www.d20pfsrd.com/magic/all-spells/b/bull-s-strength">Bull's Strength</a> scroll.
+  li <b>Spell</b>: <a href="http://www.d20pfsrd.com/magic/all-spells/c/cat-s-grace">Cat's Grace</a> (<span class="magic_items_bonus">+4</span>)
+  li <b>Scroll</b>: <a href="http://www.d20pfsrd.com/magic/all-spells/c/cat-s-grace">Cat's Grace</a> scroll.
     mixin magic_item_table_vertical([4],[150],["3 min duration (<i>add 50 gp for each additional min</i>)"])
-  li <b>Potion</b>: <a href="http://www.d20pfsrd.com/magic/all-spells/b/bull-s-strength">Bull's Strength</a> potion
+  li <b>Potion</b>: <a href="http://www.d20pfsrd.com/magic/all-spells/c/cat-s-grace">Cat's Grace</a> potion
     mixin magic_item_table_vertical([4],[300],["3 min duration (<i>add 100 gp for each additional min</i>)"])
-  li <b>Wand</b>: <a href="http://www.d20pfsrd.com/magic/all-spells/b/bull-s-strength">Bull's Strength</a> wand
+  li <b>Wand</b>: <a href="http://www.d20pfsrd.com/magic/all-spells/c/cat-s-grace">Cat's Grace</a> wand
     mixin magic_item_table_vertical([4],[4500],["3 min duration (<i>add 1500 gp for each additional min</i>)"])
   li <b>Magical Belts</b>:
     ul
-      li <a href="http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/a-b/belt-of-giant-strength">Belt of Giant Strength</a>
+      li <a href="http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/a-b/belt-of-incredible-dexterity">Belt of Incredible Dexterity</a>
         mixin magic_item_table([2,4,6],[4000,16000,36000])
       li <a href="http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/a-b/belt-of-physical-might">Belt of Physical Might</a><br />This belt improves two physical stats, so two of Str, Dex AND Con.
         mixin magic_item_table([2,4,6],[10000,40000,90000])
@@ -51,7 +58,7 @@ ul
 h2 Inherent bonuses
 
 ul
-  li <a href="http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/a-b/book-manual-of-gainful-exercise">Manual of Gainful Exercise</a>, magical item.
+  li <a href="http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/a-b/book-manual-of-quickness-of-action">Manual of Quickness of Action</a>, magical item.
     mixin magic_item_table([1,2,3,4,5],[27500,55000,82500,110000,137500])
   li <a href="http://www.d20pfsrd.com/classes/core-classes/sorcerer">Sorcerer Bloodlines</a>: some sorcerer bloodlines provide inherent bonuses to a particular stat. One example of this would be the <a href="http://www.d20pfsrd.com/classes/core-classes/sorcerer/bloodlines/bloodlines-from-paizo/abyssal-bloodline">Abyssal Bloodline</a>.
 
