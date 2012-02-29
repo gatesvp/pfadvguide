@@ -1,0 +1,70 @@
+include ../mixins
+
+h1 Wisdom
+
+h1 Bonuses / modifiers
+
+p Wisdom provides a modifier to the following actions:
+  ul
+    li <a href='http://www.d20pfsrd.com/basics-ability-scores/ability-scores#TOC-Abilities-and-Spellcasters'>Bonus Spells</a>: PCs who use wisdom as their primary casting stat (such as Clerics, Druids and Rangers), gain additional spells / day based on their wisdom.
+    li <a href='/def/will'>Will saving throws</a>
+    li <a href='http://www.d20pfsrd.com/skills/linguistics'>Bonus Starting Languages</a>: a character with high wisdom starts with a number of additional languages equal to their modifier. Note that negatives do not reduce the number of languages.
+    li <a href='http://www.d20pfsrd.com/skills/heal'>Heal skill</a>
+    li <a href='http://www.d20pfsrd.com/skills/perception'>Perception skill</a>
+    li <a href='http://www.d20pfsrd.com/skills/profession'>Profession skill</a>: note that Profession has several separate sub-types that are trained individually. Examples include: <i>cook</i>, <i>librarian</i>, <i>trapper</i>.
+    li <a href='http://www.d20pfsrd.com/skills/sense-motive'>Sense Motive skill</a>
+    li <a href='http://www.d20pfsrd.com/skills/survival'>Survival skill</a>
+
+h1 Improving your Wisdom
+
+p There are several avenues for improving this ability. The abilities within a category do not stack. You cannot have two enhancement bonuses active at once, only the largest bonus takes effect.
+
+p In general, magical items are the easiest way to start boosting your stats.
+
+p Note that every two points of ability improvement provides a one point modifier to the relevant abilities listed above.
+
+h2 Racial bonuses
+
+p The following races receive racial bonsues to their wisdom.
+
+ul
+  li <a href="http://www.d20pfsrd.com/races/core-races/human">Human</a>, <a href="http://www.d20pfsrd.com/races/core-races/half-elf">Half-elf</a>, <a href="http://www.d20pfsrd.com/races/core-races/half-orc">Half-orc</a> (<i>must pick this bonus</i>)
+  li <a href="http://www.d20pfsrd.com/races/core-races/dwarf">Dwarf</a>
+  li <a href="http://www.d20pfsrd.com/races/core-races/gnome">Gnome</a>
+
+h2 Enhancment bonuses
+
+p The following items and spells provide an enhancement bonus. Generally the highest enhancement bonus available is +6.
+
+ul
+  li <b>Spell</b>: <a href="http://www.d20pfsrd.com/magic/all-spells/o/owl-s-wisdom">Owl's Wisdom</a> (<span class="magic_items_bonus">+4</span>)
+  li <b>Scroll</b>: <a href="http://www.d20pfsrd.com/magic/all-spells/o/owl-s-wisdom">Owl's Wisdom</a> scroll.
+    mixin magic_item_table_vertical([4],[150],["3 min duration (<i>add 50 gp for each additional min</i>)"])
+  li <b>Potion</b>: <a href="http://www.d20pfsrd.com/magic/all-spells/o/owl-s-wisdom">Owl's Wisdom</a> potion
+    mixin magic_item_table_vertical([4],[300],["3 min duration (<i>add 100 gp for each additional min</i>)"])
+  li <b>Wand</b>: <a href="http://www.d20pfsrd.com/magic/all-spells/o/owl-s-wisdom">Owl's Wisdom</a> wand
+    mixin magic_item_table_vertical([4],[4500],["3 min duration (<i>add 1500 gp for each additional min</i>)"])
+  li <b>Magical Belts</b>:
+    ul
+      li <a href="http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/h-l/headband-of-inspired-wisdom">Headband of Inspired Wisdom</a>
+        mixin magic_item_table([2,4,6],[4000,16000,36000])
+      li <a href="http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/h-l/headband-of-mental-prowess">Headband of Mental Prowess</a><br />This headband improves two mental stats, so two of Int, Wis and Cha
+        mixin magic_item_table([2,4,6],[10000,40000,90000])
+      li <a href="http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/h-l/headband-of-mental-superiority">Headband of Mental Superiority</a><br />This headband improves all three mental attribute (Int, Wis AND Cha)
+        mixin magic_item_table([2,4,6],[16000,64000,144000])
+
+h2 Inherent bonuses
+
+ul
+  li <a href="http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/a-b/book-tome-of-understanding">Tome of Understanding</a>, magical item.
+    mixin magic_item_table([1,2,3,4,5],[27500,55000,82500,110000,137500])
+  li <a href="http://www.d20pfsrd.com/classes/core-classes/sorcerer">Sorcerer Bloodlines</a>: some sorcerer bloodlines provide inherent bonuses to a particular stat. One example of this would be the <a href="http://www.d20pfsrd.com/classes/core-classes/sorcerer/bloodlines/bloodlines-from-paizo/abyssal-bloodline">Abyssal Bloodline</a>.
+
+
+h2 Untyped bonuses
+
+p The untyped bonus is in a category of its own and stacks with all other bonuses.
+
+ul
+  li <b>Level bonus</b><br />Every fourth level (4, 8, 12, 16, 20), the character can increase one stat by one point. <i>Note that this is only 1 point, stats typically need to be increased by two points to improve relevant abilities.</i>
+
