@@ -36,3 +36,11 @@ mixin magic_item_table_vertical(bonuses, costs, notes, header)
           td.magic_items_cost #{costs[i]} gp
           td.magic_items_note!= notes[i]
 
+mixin menu_vertical(menu_items)
+  each item in menu_items
+    h2 <a href='#{item.url}'>#{item.title}</a>
+
+    if(item.children)
+      ul
+        each child in item.children
+          li <a href='#{child.url}'>#{child.title}</a>

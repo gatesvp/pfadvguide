@@ -14,32 +14,35 @@ app.use(app.router);
 app.use(express.static(__dirname + '/public'));
 app.use(express.errorHandler({showStack:true, dumpExceptions:true}));
 
-testMobile = function(ua){
+testMobile = function(req){
   var regex = /(iphone|ppc|windows ce|blackberry|opera mini|mobile|palm|portable)/i;
-  return regex.test(ua);
+  var mobile_agent = regex.test(req.header('user-agent'));
+
+  var mobile_subdomain = (req.headers.host.substring(0,1).toLowerCase() == "m");
+
+  return mobile_agent || mobile_subdomain;
 }
 
+menu_items = require("./menu.js");
 
 app.get('*', function(req, res, next) {
-  var ua = req.header('user-agent');
-  var parsed = url.parse(req.url);
 
-  var layout = true;
-
-  if(testMobile(ua) || req.headers.host.substring(0,1).toLowerCase() == "m") {
-    layout = 'mobile';
-  }
-
-  var pathname = parsed.pathname.toLowerCase(); // make matching case insenstive
+  var layout = testMobile(req) ? 'mobile' : true;
+  var pathname = url.parse(req.url).pathname.toLowerCase(); // make matching case insenstive
   
-  if(!pathname || pathname === '/'){
-    res.render('index', {'layout': layout, 'pathname': pathname});
+  // first case renders no path
+  if(!pathname) {
+    res.render('index', {'layout': layout, 'pathname': pathname, 'menu_items': menu_items});
+  }
+  // second case renders a "folder" ending in /
+  else if (pathname === '/' || pathname.charAt(pathname.length-1) === '/' ){
+    res.render(__dirname + '/views' + pathname + 'index.jade', {'layout': layout, 'pathname': pathname, 'menu_items': menu_items});
   }
   else {
     // Attempt to find the referenced jade file and render that.
-    fs.stat( (__dirname+"/views"+pathname+'.jade'), function(err, stats){
+    fs.stat( (__dirname + "/views" + pathname + '.jade'), function(err, stats){
       if(stats) {
-        res.render(pathname.substring(1), {'layout': layout, 'pathname': pathname});
+        res.render(pathname.substring(1), {'layout': layout, 'pathname': pathname, 'menu_items': menu_items});
       }
       else {
         next();

@@ -1,3 +1,5 @@
+include mixins.jade
+
 !!! 5
 html(xmlns="http://www.w3.org/1999/xhtml")
   head
@@ -10,39 +12,12 @@ html(xmlns="http://www.w3.org/1999/xhtml")
     #content
       != body
     #left
-      h2 <a href='/'>Home</a>
-      h2 <a href='/stats/index'>Stats</a>
-      ul
-        li <a href='/stats/str'>Strength</a>
-        li <a href='/stats/dex'>Dexterity</a>
-        li <a href='/stats/con'>Constitution</a>
-        li <a href='/stats/int'>Intelligence</a>
-        li <a href='/stats/wis'>Wisdom</a>
-        li <a href='/stats/cha'>Charisma</a>
-      h2 <a href='/def/index'>Defenses</a>
-      ul
-        li <a href='/def/ac'>Armor Class</a>
-        li <a href='/def/ref'>Reflex</a>
-        li <a href='/def/fort'>Fortitude</a>
-        li <a href='/def/will'>Will</a>
-        li <a href='/def/hp'>Hit Points</a>
-        li <a href='/def/spell'>Spell Protection</a>
-      h2 <a href='/combat/index'>Combat</a>
-      ul
-        li <a href='/combat/base'>Base Attack Bonus</a>
-        li Combat Maneuvers
-      h2 Spells
-      ul
-        li Magic Item Slots
-        li Common Spells
-        li Common Magic Items
-      h2 Feats
-      h2 Skills
+      mixin menu_vertical(menu_items)
     #right
       h2 Right bar
         p ads go here
 
     #footer
       p.
-        Copyright&copy; 2012 Adventurer's Guide. All Rights Reserved. <br />
+        Copyright&copy; 2012 Pathfinder Adventurer's Guide. All Rights Reserved. <br />
         Template by <a href="http://www.karenblundell.com/">arwen54</a>
