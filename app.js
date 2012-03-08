@@ -25,9 +25,13 @@ testMobile = function(req){
 
 menu_items = require("./menu.js");
 
+/**
+ * Generic "get" attempts to route to know JADE files.
+ * If no known JADE files, then we pass routing to next() (should be static).
+ */
 app.get('*', function(req, res, next) {
 
-  var layout = testMobile(req) ? 'mobile' : true;
+  var layout = testMobile(req) ? 'mobile_layout' : true;
   var pathname = url.parse(req.url).pathname.toLowerCase(); // make matching case insenstive
   
   // first case renders no path

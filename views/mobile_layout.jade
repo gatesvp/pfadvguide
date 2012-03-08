@@ -1,9 +1,13 @@
+include mixins.jade
+
 !!! 5
 html
   head
     title PF Adventurer's Guide
     meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
     link(href="/css/style.css", rel="stylesheet", type="text/css")
+    meta(name="viewport", content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;") 
   body
-    p Menu
+    h1 PF Adventurer's Guide
+    mixin menu_mobile(menu_items, pathname) 
     p!= body

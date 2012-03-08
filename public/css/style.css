@@ -1,14 +1,14 @@
 body {
-min-width:779px;
-max-width: 1003px;
-margin:0;
-padding:0;
-font-family: Verdana, Arial, sans-serif;
-color: #000;
-font-size:90%;
-/*background: #FFFDF6 url(images/flower2.jpg) no-repeat 1% 94%;*/
-
+  /*min-width:779px;
+  max-width: 1003px;*/
+  margin:0;
+  padding:0;
+  font-family: Verdana, Arial, sans-serif;
+  color: #000;
+  font-size:90%;
+  /*background: #FFFDF6 url(images/flower2.jpg) no-repeat 1% 94%;*/
 }
+
 /* Structure */
 
 #header,#left,#content,#right,#footer {
@@ -251,3 +251,27 @@ table.magic_items td {
 
 }
 
+/* Mobile menu formatting */
+.mobile_menu_parent {
+  padding: 5px 10px;
+  margin: 0;
+}
+
+.mobile_menu {
+
+}
+.mobile_menu_selected {
+  text-decoration: underline;
+  font-weight: bold;
+}
+.mobile_sub_menu_parent {
+  padding: 5px 10px;
+  margin: 0;
+}
+.mobile_sub_menu { 
+  font-size: smaller;
+
+}
+.mobile_sub_menu_selected {
+
+}

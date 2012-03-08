@@ -1,3 +1,11 @@
+mixin item_cost(cost)
+  if cost > 1000
+    span #{cost.toString().replace(/(.*)(...)/, "$1,$2")} gp
+  else if cost > 0
+    span #{cost} gp
+  else if cost < 0
+    span #{cost / 100} sp
+
 mixin magic_item_table(bonuses, costs, notes)
   table.magic_items
     thead
@@ -12,7 +20,8 @@ mixin magic_item_table(bonuses, costs, notes)
     tbody
       tr
         each c in costs
-          td.magic_items_cost #{c} gp
+          td.magic_items_cost
+            mixin item_cost(c)
         if notes
           td!= notes
 
@@ -33,10 +42,11 @@ mixin magic_item_table_vertical(bonuses, costs, notes, header)
             td -#{b}
           else
             td #{b}
-          td.magic_items_cost #{costs[i]} gp
+          td.magic_items_cost
+            mixin item_cost(costs[i])
           td.magic_items_note!= notes[i]
 
-mixin menu_vertical(menu_items)
+mixin menu_vertical(menu_items, pathname)
   each item in menu_items
     h2 <a href='#{item.url}'>#{item.title}</a>
 
@@ -44,3 +54,24 @@ mixin menu_vertical(menu_items)
       ul
         each child in item.children
           li <a href='#{child.url}'>#{child.title}</a>
+
+mixin menu_mobile(menu_items, pathname)
+  .mobile_menu_parent
+    each item, i in menu_items
+      if i !== 0
+        &nbsp;&#124;&nbsp;
+      if item.url != pathname
+        span <a href='#{item.url}' class='mobile_menu'>#{item.title}</a>
+      else
+        span.mobile_menu_selected #{item.title}
+
+  // Check for possible children
+  each item, i in menu_items
+    if item.url == pathname && item.children
+      .mobile_sub_menu_parent
+        each child, j in item.children
+          if j !== 0
+            &nbsp;&#124;&nbsp;
+          span <a href='#{child.url}' class="mobile_sub_menu">#{child.title}</a>
+
+
