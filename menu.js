@@ -18,7 +18,8 @@ module.exports = menu_items =
     { url: '/def/fort', title: 'Fortitude' },
     { url: '/def/will', title: 'Will' },
     { url: '/def/hp', title: 'Hit Points' },
-    { url: '/def/spell', title: 'Spell Protection' }
+    { url: '/def/spell', title: 'Spell Protection' },
+    { url: '/def/resistance', title: 'Resistance / Immunity' }
   ]
 },
 { url: '/combat/index', title: 'Combat',

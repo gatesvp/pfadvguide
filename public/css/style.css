@@ -251,6 +251,12 @@ table.magic_items td {
 
 }
 
+/* Regular menu formatting */
+.menu_selected {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
 /* Mobile menu formatting */
 .mobile_menu_parent {
   padding: 5px 10px;

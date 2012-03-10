@@ -48,30 +48,38 @@ mixin magic_item_table_vertical(bonuses, costs, notes, header)
 
 mixin menu_vertical(menu_items, pathname)
   each item in menu_items
-    h2 <a href='#{item.url}'>#{item.title}</a>
+    if pathname !== item.url
+      h2 <a href='#{item.url}'>#{item.title}</a>
+    else
+      h2.menu_selected #{item.title}
 
     if(item.children)
       ul
         each child in item.children
-          li <a href='#{child.url}'>#{child.title}</a>
+          if pathname !== child.url
+            li <a href='#{child.url}'>#{child.title}</a>
+          else
+            li.menu_selected #{child.title}
 
 mixin menu_mobile(menu_items, pathname)
+  - var matched = false
+
   .mobile_menu_parent
-    each item, i in menu_items
-      if i !== 0
+    - each item, i in menu_items
+      - if(i !== 0)
         &nbsp;&#124;&nbsp;
-      if item.url != pathname
+      - if(item.url != pathname)
         span <a href='#{item.url}' class='mobile_menu'>#{item.title}</a>
-      else
+      - else
         span.mobile_menu_selected #{item.title}
+        - matched = item
 
   // Check for possible children
-  each item, i in menu_items
-    if item.url == pathname && item.children
-      .mobile_sub_menu_parent
-        each child, j in item.children
-          if j !== 0
-            &nbsp;&#124;&nbsp;
-          span <a href='#{child.url}' class="mobile_sub_menu">#{child.title}</a>
+  - if(matched && matched.children)
+    .mobile_sub_menu_parent
+      - each child, j in matched.children
+        - if(j !== 0)
+          &nbsp;&#124;&nbsp;
+        span <a href='#{child.url}' class="mobile_sub_menu">#{child.title}</a>
 
 
