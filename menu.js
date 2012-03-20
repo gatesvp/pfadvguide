@@ -1,4 +1,4 @@
-module.exports = menu_items = 
+var menu_items = 
 [
 { url: '/', title: 'Home'},
 { url: '/stats/index', title: 'Stats',
@@ -13,7 +13,17 @@ module.exports = menu_items =
 },
 { url: '/def/index', title: 'Defenses',
   children: [
-    { url: '/def/ac', title: 'Armor Class' },
+    { url: '/def/ac', title: 'Armor Class', 
+      children: [
+        { url: '/def/ac/size', title: 'Size' },
+        { url: '/def/ac/armor', title: 'Armor' },
+        { url: '/def/ac/shield', title: 'Shield' },
+        { url: '/def/ac/natural', title: 'Natural' },
+        { url: '/def/ac/dex', title: 'Dex' },
+        { url: '/def/ac/dodge', title: 'Dodge' },
+        { url: '/def/ac/deflection', title: 'Deflection' }
+      ]
+    },
     { url: '/def/ref', title: 'Reflex' },
     { url: '/def/fort', title: 'Fortitude' },
     { url: '/def/will', title: 'Will' },
@@ -32,10 +42,11 @@ module.exports = menu_items =
   children: [
     { url: '/spells/magic_item_slots', title: 'Magic Item Slots' },
     { url: '/spells/common_spells', title: 'Common Spells' },
-    { url: '/spells/common_magic_items', title: 'Common Magic Items' },
+    { url: '/spells/common_magic_items', title: 'Common Magic Items' }
   ]
 },
 { url: '/feats/index', title: 'Feats' },
 { url: '/skills/index', title: 'Skills' }
-]
+];
 
+module.exports = menu_items;

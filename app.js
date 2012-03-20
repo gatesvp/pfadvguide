@@ -1,8 +1,5 @@
-var port = 80;
+var port = process.env.PORT ? process.env.PORT : 80;
 var url = require('url');
-var http = require('http');
-var util = require('util');
-var exec = require('child_process').exec;
 var express = require('express');
 var app = express.createServer();
 var fs = require('fs');
@@ -14,16 +11,16 @@ app.use(app.router);
 app.use(express.static(__dirname + '/public'));
 app.use(express.errorHandler({showStack:true, dumpExceptions:true}));
 
-testMobile = function(req){
+var testMobile = function(req){
   var regex = /(iphone|ppc|windows ce|blackberry|opera mini|mobile|palm|portable)/i;
   var mobile_agent = regex.test(req.header('user-agent'));
 
   var mobile_subdomain = (req.headers.host.substring(0,1).toLowerCase() == "m");
 
   return mobile_agent || mobile_subdomain;
-}
+};
 
-menu_items = require("./menu.js");
+var menu_items = require("./menu.js");
 
 /**
  * Generic "get" attempts to route to know JADE files.
@@ -45,13 +42,12 @@ app.get('*', function(req, res, next) {
   else {
     // Attempt to find the referenced jade file and render that.
     fs.stat( (__dirname + "/views" + pathname + '.jade'), function(err, stats){
-      if(stats) {
-        res.render(pathname.substring(1), {'layout': layout, 'pathname': pathname, 'menu_items': menu_items});
-      }
-      else {
+      if(err || !stats) {
         next();
       }
-
+      else{
+        res.render(pathname.substring(1), {'layout': layout, 'pathname': pathname, 'menu_items': menu_items});
+      }
     });
 
   }

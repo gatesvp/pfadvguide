@@ -46,6 +46,7 @@ mixin magic_item_table_vertical(bonuses, costs, notes, header)
             mixin item_cost(costs[i])
           td.magic_items_note!= notes[i]
 
+
 mixin menu_vertical(menu_items, pathname)
   each item in menu_items
     if pathname !== item.url
@@ -54,12 +55,18 @@ mixin menu_vertical(menu_items, pathname)
       h2.menu_selected #{item.title}
 
     if(item.children)
-      ul
-        each child in item.children
-          if pathname !== child.url
-            li <a href='#{child.url}'>#{child.title}</a>
-          else
-            li.menu_selected #{child.title}
+      mixin menu_vertical_children(item.children, pathname)
+
+mixin menu_vertical_children(children, pathnam)
+  ul
+    each child in children
+      if pathname !== child.url
+        li <a href='#{child.url}'>#{child.title}</a>
+      else
+        li.menu_selected #{child.title}
+
+      if(child.children)
+        mixin menu_vertical_children(child.children, pathname)
 
 mixin menu_mobile(menu_items, pathname)
   - var matched = false

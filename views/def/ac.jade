@@ -2,7 +2,11 @@ h1 Armor Class Sources
 
 p Armor Class represents the difficulty of hitting you with an attack. Your AC stems from a combination of seven different sources. Each of these is detailed in the sections below.
 
-p Additionally you have three different statuses related to AC: normal, flat-footed and touch. Normal allows you to use all of your bonuses. When you are flat-footed you lose your movement-related bonuses (<i>touch and dodge</i>). When someone attempts to hit your touch AC, such as a spell where you simply need to be touched, you lose your physical armor bonuses (<i>armor, shield, natural</i>).
+p Additionally you have three different statuses related to AC:
+  ol
+    li <b>Normal</b>: The normal state. Allows you to use all of your bonuses.
+    li <b>Flat-footed</b>: When you are surprised or unaware, or before you have had your first chance to act. No benefit from your movement-related bonuses (<i>dexterity and dodge</i>). 
+    li <b>Touch</b>: The difficulty of simply touching you, typically for a spell. No benefit from your physical armor bonuses (<i>armor, shield, natural</i>).
 
 p Refer to the following table for the basic calculation of your AC. Your total is the sum of the numbers in the given row (left-to-right).
 
@@ -10,12 +14,12 @@ table.magic_items
   theader
     th.magic_items_bonus Status
     th.magic_items_bonus Base
+    th.magic_items_bonus Size
     th.magic_items_bonus Armor
     th.magic_items_bonus Shield
-    th.magic_items_bonus Dex
-    th.magic_items_bonus Size
-    th.magic_items_bonus Dodge
     th.magic_items_bonus Natural
+    th.magic_items_bonus Dex
+    th.magic_items_bonus Dodge
     th.magic_items_bonus Deflection
   tbody
     tr
@@ -31,110 +35,22 @@ table.magic_items
     tr
       td.magic_items_bonus Touch
       td 10
-      td(style="border:none;text-align:center;") X 
-      td(style="border:none;text-align:center;") X 
       td &nbsp; 
+      td(style="border:none;text-align:center;") &nbsp;
+      td(style="border:none;text-align:center;") &nbsp;
+      td(style="border:none;text-align:center;") &nbsp;
       td &nbsp; 
       td &nbsp;  
-      td(style="border:none;text-align:center;") X 
       td &nbsp; 
     tr
-      td.magic_items_bonus Flat-Foot
+      td.magic_items_bonus Flat-Footed
       td 10
       td &nbsp; 
       td &nbsp; 
-      td(style="border:none;text-align:center;") X 
-      td &nbsp; 
-      td(style="border:none;text-align:center;") X 
       td &nbsp; 
       td &nbsp; 
-
-h1 Armor
-
-p Armor bonus is based on the armor your character is wearing. This armor may be magically enhanced to increase the bonus. This bonus can also be generated magically using spells or <a href="http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/a-b/bracers-of-armor">Bracers of Armor</a> (<i>which effectively replaces the armor</i>).
-
-p 
-
-h1 Shield
-
-p Shield bonus is based on the shield your character is carrying (and using). The shield may be magically enhanced to increase the bonus. There are also several spells and magic items which can act as magical shields in place of physical ones.
-
-p Methods to improve include:
-  ul
-    li Using a shield
-    li Enchanting that shield
-    li The <a href='http://www.d20pfsrd.com/magic/all-spells/s/shield'>shield spell</a>
-
-h1 Dexterity
-
-p Dexterity bonus is derived directly from you Dexterity modifier. To improve your armor class see the section on improving your <a href='/stats/dex'>Dexterity Ability Score</a>.
-
-h2 Special Notes
-
-p The Dexterity bonus only applies to situations where your character has some awareness of what's going on and is capable of avoiding the attack. It also only applies after your first regular action in combat (<i>i.e: you are flat-footed</i>). So if you are caught by surprise, you will lose this bonus. This can be mitigated by the <a href='http://www.d20pfsrd.com/classes/core-classes/rogue#TOC-Uncanny-Dodge-Ex-'>Uncanny Dodge</a> feat.
-
-p Dexterity bonus is also limited by your armor. For light armors this bonus tends to be quite high, but for heavy armors this limitation is often +0 or +1.
-
-p The Dexterity bonus can also be a Dexterity <i>penalty</i>. A character with a low Dexterity will lose armor class as a result. Note that this can also be applied in combat to enemies. Spells that cause an enemy to lose Dexterity will typically cause their armor class to drop.
-
-h1 Size
-
-p Size bonus is influenced by the size of your character. For the core PC races this is Small (S) or Medium (M). So small races (Halflings, Dwarves and Gnomes) will receive a +1 on this stat.
-
-p Note that some spells, such as <a href='http://www.d20pfsrd.com/magic/all-spells/r/righteous-might'>Righteous Might</a> can change the size of the PC which will affect their AC.
-
-table.magic_items
-  theader
-    th.magic_items_bonus +8
-    th.magic_items_bonus +4
-    th.magic_items_bonus +2
-    th.magic_items_bonus +1
-    th.magic_items_bonus 0
-    th.magic_items_bonus -1
-    th.magic_items_bonus -2
-    th.magic_items_bonus -4
-    th.magic_items_bonus -8
-  tbody
-    tr
-      td.magic_items_bonus Normal
-      td Fine
-      td Diminutive 
-      td Tiny
-      td Small 
-      td Medium 
-      td Large
-      td Huge
-      td Gargantuan
-      td Colossal
-
-h1 Dodge
-
-p Dodge bonus is generally available from specific feats or class features. Note that dodge bonuses <b>do</b> stack, so multiple sources of dodge bonus will work together.
-
-p That said, most dodge bonuses are quite small and tend to be situational.
-
-h2 Improving
-
-ul
-  li <b>Feat</b>: <a href='http://www.d20pfsrd.com/feats/combat-feats/dodge-combat---final'>Dodge</a>. This is the simplest way to acquire a dodge bonus. This feat provides a +1 AC and requires a Dex of 13.
-  li <b>Feat</b>: <a href='http://www.d20pfsrd.com/feats/combat-feats/combat-expertise-combat'>Combat Expertise</a> allows you to take a -X on attacks in exchange for a +X dodge bonus, where X is 1 + # of +4 in your attack bonus. So at +8 attack bonus you would get a -3 to attack and +3 dodge AC. <i>note that using this feat still means that you have to make a melee attack, it does not stack with the Total Defense action</i>
-  li <b>Spell</b>: the <a href='http://www.d20pfsrd.com/magic/all-spells/h/haste'>Haste</a> spell grants a +1 dodge bonus.
-  li <b>Magic Item</b>: <a href='http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/a-b/boots-of-speed'>Boots of Speed</a> (<span class='magic_items_cost'>12,000 gp</span>) can grant a +1 dodge bonus when activated, as per the Haste spell.
-  li <b>Action</b>: <a href='http://www.d20pfsrd.com/gamemastering/combat#TOC-Attack'>Fight Defensively</a>. When attacking you can choose to fight defensively. This provides a -4 on the attack in exchange for a +2 dodge bonus. If you have 3 ranks in the <a href='http://www.d20pfsrd.com/skills/acrobatics'>Acrobatics</a> skill, this becomes a +3 dodge bonus.
-  li <b>Action</b>: <a href='http://www.d20pfsrd.com/gamemastering/combat#TOC-Total-Defense'>Total Defense</a>. When you select this full-round action in combat, your character receives a +4 dodge bonus to their defense. If you have 3 ranks in the <a href="http://www.d20pfsrd.com/skills/acrobatics">Acrobatics</a> skill, this becomes a +6 dodge bonus.
-  li <b>Race</b>: <a href='http://www.d20pfsrd.com/races/core-races/human'>Humans</a> can take the <i>Heart of the Streets</i> racial trait which grants a +1 dodge bonus when adjacent to two other allies.
-  li <b>Class</b>: Barbarians have access to the rage power: <a href='http://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo---rage-powers/rolling-dodge-ex'>Rolling Dodge</a>. This power provides a +1 dodge bonus against ranged attacks for every 6 levels of Barbarian attained.
-  li <b>Class</b>: the <a href='http://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/stalwart-defender'>Stalwart Defender</a> prestige class gains a dodge bonus as they improve in level.
-  li <b>Class</b>: the <a href='http://www.d20pfsrd.com/classes/prestige-classes/core-rulebook/duelist'>Duelist</a> prestige class has an <i>Elaborate Defense</i> ability that grants additional dodge bonuses when fighting defensively.
-
-h1 Natural
-
-p Natural bonuses come from having thick skin, making you more difficult to damage. This can also be enhanced by spells such as <a href='http://www.d20pfsrd.com/magic/all-spells/b/barkskin'>Barkskin</a> that toughen the skin.
-
-h2 Improving
-
-h1 Deflection
-
-h2 Improving
+      td(style="border:none;text-align:center;") &nbsp;
+      td(style="border:none;text-align:center;") &nbsp;
+      td &nbsp; 
 
  
