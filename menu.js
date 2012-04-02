@@ -1,7 +1,7 @@
 var menu_items = 
 [
 { url: '/', title: 'Home'},
-{ url: '/stats/index', title: 'Stats',
+{ url: '/stats/', title: 'Stats',
   children: [
     { url: '/stats/str', title: 'Strength' },
     { url: '/stats/dex', title: 'Dexterity' },
@@ -11,7 +11,7 @@ var menu_items =
     { url: '/stats/cha', title: 'Charisma' }
   ]
 },
-{ url: '/def/index', title: 'Defenses',
+{ url: '/def/', title: 'Defenses',
   children: [
     { url: '/def/ac', title: 'Armor Class', 
       children: [
@@ -32,21 +32,22 @@ var menu_items =
     { url: '/def/resistance', title: 'Resistance / Immunity' }
   ]
 },
-{ url: '/combat/index', title: 'Combat',
+{ url: '/combat/', title: 'Combat',
   children: [
     { url: '/combat/base', title: 'Base Attack Bonus'},
     { url: '/combat/maneuvers', title: 'Combat Maneuvers' }
   ]
 },
-{ url: '/spells/index', title: 'Spells',
+{ url: '/spells/', title: 'Spells',
   children: [
     { url: '/spells/magic_item_slots', title: 'Magic Item Slots' },
     { url: '/spells/common_spells', title: 'Common Spells' },
     { url: '/spells/common_magic_items', title: 'Common Magic Items' }
   ]
 },
-{ url: '/feats/index', title: 'Feats' },
-{ url: '/skills/index', title: 'Skills' }
+{ url: '/feats/', title: 'Feats' },
+{ url: '/skills/', title: 'Skills' },
+{ url: '/class/', title: 'Classes' }
 ];
 
 module.exports = menu_items;
