@@ -243,8 +243,10 @@ table.magic_items td {
 }
 
 .magic_items_bonus {
+  font-weight: bold;
   background-color: #8B8D88;
   color: #eee;
+  text-align: center;
 }
 
 .magic_items_cost {
