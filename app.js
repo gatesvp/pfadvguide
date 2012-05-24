@@ -12,6 +12,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.errorHandler({showStack:true, dumpExceptions:true}));
 
 var testMobile = function(req){
+  'use strict';
   var regex = /(iphone|ppc|windows ce|blackberry|opera mini|mobile|palm|portable)/i;
   var mobile_agent = regex.test(req.header('user-agent'));
 
@@ -22,11 +23,22 @@ var testMobile = function(req){
 
 var menu_items = require("./menu.js");
 
+
+app.get('/health', function(req, res){
+  'use strict';
+  res.send({
+    pid: process.pid,
+    memory: process.memoryUsage(),
+    uptime: process.uptime()
+  });
+});
+
 /**
  * Generic "get" attempts to route to know JADE files.
  * If no known JADE files, then we pass routing to next() (should be static).
  */
 app.get('*', function(req, res, next) {
+  'use strict';
 
   var layout = testMobile(req) ? 'mobile_layout' : true;
   var pathname = url.parse(req.url).pathname.toLowerCase(); // make matching case insenstive
@@ -55,3 +67,9 @@ app.get('*', function(req, res, next) {
 
 app.listen(port);
 
+process.on('uncaughtException', function (err) {
+  'use strict';
+  console.error('uncaughtException:', err.message);
+  console.error(err.stack);
+  process.exit(1);
+});
