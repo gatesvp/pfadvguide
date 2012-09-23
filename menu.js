@@ -5,7 +5,7 @@ var menu_items =
   children: [
     { url: '/stats/str', title: 'Strength' },
     { url: '/stats/dex', title: 'Dexterity' },
-    { url: '/stats/con', title: 'Constitution' },
+    { url: '/stats/cst', title: 'Constitution' },
     { url: '/stats/int', title: 'Intelligence' },
     { url: '/stats/wis', title: 'Wisdom' },
     { url: '/stats/cha', title: 'Charisma' }
@@ -21,7 +21,9 @@ var menu_items =
         { url: '/def/ac/natural', title: 'Natural' },
         { url: '/def/ac/dex', title: 'Dex' },
         { url: '/def/ac/dodge', title: 'Dodge' },
-        { url: '/def/ac/deflection', title: 'Deflection' }
+        { url: '/def/ac/deflection', title: 'Deflection' },
+        { url: '/def/ac/insight', title: 'Insight' },
+        { url: '/def/ac/morale', title: 'Morale' }
       ]
     },
     { url: '/def/ref', title: 'Reflex' },
