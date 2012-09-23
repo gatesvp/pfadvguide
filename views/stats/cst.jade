@@ -1,0 +1,62 @@
+include ../mixins
+
+h1 Bonuses / modifiers
+
+p Constitution provides a modifier to the following actions:
+  ul
+    li <a href='/def/fort'>Fortitude saving throws</a>
+    li <a href='/def/hp'>Hit Points</a>, constitution modifier provides bonus HP on each hit die. For PCs, this means each level.
+
+h1 Improving your Constitution
+
+p There are several avenues for improving this ability. The abilities within a category do not stack. You cannot have two enhancement bonuses active at once, only the largest bonus takes effect.
+
+p In general, magical items are the easiest way to start boosting your stats.
+
+p Note that every two points of ability improvement provides a one point modifier to the relevant abilities listed above.
+
+h2 Racial bonuses
+
+p The following races receive racial bonsues to their constitution.
+
+ul
+  li <a href="http://www.d20pfsrd.com/races/core-races/human">Human</a>, <a href="http://www.d20pfsrd.com/races/core-races/half-elf">Half-elf</a>, <a href="http://www.d20pfsrd.com/races/core-races/half-orc">Half-orc</a> (<i>must pick this bonus</i>)
+  li <a href="http://www.d20pfsrd.com/races/core-races/dwarf">Dwarf</a>
+  li <a href="http://www.d20pfsrd.com/races/core-races/gnome">Gnome</a>
+
+
+h2 Enhancment bonuses
+
+p The following items and spells provide an enhancement bonus. Generally the highest enhancement bonus available is +6.
+
+ul
+  li <b>Spell</b>: <a href="http://www.d20pfsrd.com/magic/all-spells/b/bear-s-endurance">Bear's Endurance</a> (<span class="magic_items_bonus">+4</span>)
+  li <b>Scroll</b>: <a href="http://www.d20pfsrd.com/magic/all-spells/b/bear-s-endurance">Bear's Endurance</a> scroll.
+    mixin magic_item_table_vertical([4],[150],["3 min duration (<i>add 50 gp for each additional min</i>)"])
+  li <b>Potion</b>: <a href="http://www.d20pfsrd.com/magic/all-spells/b/bear-s-endurance">Bear's Endurance</a> potion
+    mixin magic_item_table_vertical([4],[300],["3 min duration (<i>add 100 gp for each additional min</i>)"])
+  li <b>Wand</b>: <a href="http://www.d20pfsrd.com/magic/all-spells/b/bear-s-endurance">Bear's Endurance</a> wand
+    mixin magic_item_table_vertical([4],[4500],["3 min duration (<i>add 1500 gp for each additional min</i>)"])
+  li <b>Magical Belts</b>:
+    ul
+      li <a href="http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/a-b/belt-of-mighty-constitution">Belt of Mighty Constitution</a>
+        mixin magic_item_table([2,4,6],[4000,16000,36000])
+      li <a href="http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/a-b/belt-of-physical-might">Belt of Physical Might</a><br />This belt improves two physical stats, so two of Str, Dex AND Con.
+        mixin magic_item_table([2,4,6],[10000,40000,90000])
+      li <a href="http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/a-b/belt-of-physical-perfection">Belt of Physical Perfection</a><br />This belt improves all three physical attribute (Str, Dex AND Con).
+        mixin magic_item_table([2,4,6],[16000,64000,144000])
+
+h2 Inherent bonuses
+
+ul
+  li <a href="http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/a-b/book-manual-of-bodily-health">Manual of Bodily Health</a>, magical item.
+    mixin magic_item_table([1,2,3,4,5],[27500,55000,82500,110000,137500])
+  li <a href="http://www.d20pfsrd.com/classes/core-classes/sorcerer">Sorcerer Bloodlines</a>: some sorcerer bloodlines provide inherent bonuses to a particular stat. One example of this would be the <a href="http://www.d20pfsrd.com/classes/core-classes/sorcerer/bloodlines/bloodlines-from-paizo/abyssal-bloodline">Abyssal Bloodline</a>.
+
+
+h2 Untyped bonuses
+
+p The untyped bonus is in a category of its own and stacks with all other bonuses.
+
+ul
+  li <b>Level bonus</b><br />Every fourth level (4, 8, 12, 16, 20), the character can increase one stat by one point. <i>Note that this is only 1 point, stats typically need to be increased by two points to improve relevant abilities.</i>
