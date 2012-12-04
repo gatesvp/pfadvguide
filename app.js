@@ -4,6 +4,8 @@ var express = require('express');
 var app = express.createServer();
 var fs = require('fs');
 
+var view_base = __dirname + '/views';
+
 app.set("view engine", "jade");
 
 app.use(express.bodyParser());
@@ -37,7 +39,7 @@ app.get('/health', function(req, res){
 app.get('*', function(req, res, next) {
   'use strict';
 
-  var layout = testMobile(req) ? 'mobile_layout' : true;
+  var layout = testMobile(req) ? 'mobile_layout' : view_base + '/layout.jade';
   var pathname = url.parse(req.url).pathname.toLowerCase(); // make matching case insenstive
   
   // first case renders no path
@@ -46,16 +48,16 @@ app.get('*', function(req, res, next) {
   }
   // second case renders a "folder" ending in /
   else if (pathname === '/' || pathname.charAt(pathname.length-1) === '/' ){
-    res.render(__dirname + '/views' + pathname + 'index.jade', {'layout': layout, 'pathname': pathname, 'menu_items': menu_items});
+    res.render(view_base + pathname + 'index.jade', {'layout': layout, 'pathname': pathname, 'menu_items': menu_items});
   }
   else {
     // Attempt to find the referenced jade file and render that.
-    fs.stat( (__dirname + "/views" + pathname + '.jade'), function(err, stats){
+    fs.stat( (view_base + pathname + '.jade'), function(err, stats){
       if(err || !stats) {
         next();
       }
       else{
-        res.render(pathname.substring(1), {'layout': layout, 'pathname': pathname, 'menu_items': menu_items});
+        res.render((view_base + pathname + '.jade'), {'layout': layout, 'pathname': pathname, 'menu_items': menu_items});
       }
     });
 
