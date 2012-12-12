@@ -13,6 +13,8 @@ app.use(app.router);
 app.use(express.static(__dirname + '/public'));
 app.use(express.errorHandler({showStack:true, dumpExceptions:true}));
 
+var auth = express.basicAuth('gates','M0ng0d8us3r');
+
 var testMobile = function(req){
   var regex = /(iphone|ppc|windows ce|blackberry|opera mini|mobile|palm|portable)/i;
   var mobile_agent = regex.test(req.header('user-agent'));
@@ -24,7 +26,7 @@ var testMobile = function(req){
 
 var menu_items = require("./menu.js");
 
-app.get('/health', function(req, res){
+app.get('/health', auth, function(req, res){
   res.send({
     pid: process.pid,
     memory: process.memoryUsage(),
