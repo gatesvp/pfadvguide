@@ -1,5 +1,74 @@
+include ../../mixins.jade
+
 h1 Deflection
 
 p Deflection bonuses are often centered around the Shield of Faith spell.
 
 h2 Improving
+
+table.magic_items
+  tbody
+    tr
+      td.magic_items_bonus Spell
+      td <a href='http://www.d20pfsrd.com/magic/all-spells/s/shield-of-faith'>Shield of Faith</a>
+      td Grants a deflection bonus based on the caster level:
+        table.magic_items
+          theader
+            th.magic_items_bonus &nbsp;
+            th.magic_items_bonus +2
+            th.magic_items_bonus +3
+            th.magic_items_bonus +4
+            th.magic_items_bonus +5
+          tbody
+            tr
+              td.magic_items_bonus Caster Lvl
+              td 1
+              td 6
+              td 12
+              td 18
+    tr
+      td.magic_items_bonus Feat
+      td <a href='http://www.d20pfsrd.com/feats/general-feats/channeled-shield-wall'>Channeled Shield Wall</a>
+      td Grants a +2 deflection bonus to a cleric with a shield in exchange for a channel. Also grants adjacent allies the same bonus if they are using a shield.
+    tr
+      td.magic_items_bonus Feat
+      td <a hre='http://www.d20pfsrd.com/feats/general-feats/arcane-shield'>Arcane Shield</a>
+      td Exchange a spell slot for a +X deflection bonus where X is the spell level.
+    tr
+      td.magic_items_bonus Class
+      td <a href='http://www.d20pfsrd.com/classes/core-classes/paladin#TOC-Smite-Evil-Su-'>Paladin</a>
+      td Paladins have a Smite Evil class feature. This feature grants a +X deflection bonus where X is the Paladin's Charisma bonus. Note that with the <a href='http://www.d20pfsrd.com/feats/general-feats/protector-s-strike'>Protector's Strike</a> feat this bonus can be given to an ally.
+    tr
+      td.magic_items_bonus Magic Item
+      td <a href='http://www.d20pfsrd.com/magic-items/rings/ring-of-protection'>Ring of Protection</a>
+      td Grants a deflection bonus to AC:
+        mixin magic_item_table([1,2,3,4,5], [1000,4000,9000,16000,25000])
+    tr
+      td.magic_items_bonus Magic Item
+      td <a href='http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/r-z/vambraces-of-defense'>Vambraces of Defense</a>
+      td (6,000 gp) Grants a +1 deflection bonus to AC.
+    tr
+      td.magic_items_bonus Magic Item
+      td <a href='http://www.d20pfsrd.com/magic-items/rings/sihedron-ring'>Sihedron Ring</a>
+      td (35,000 gp) Grants a +3 deflection bonus to AC.
+    tr
+      td.magic_items_bonus Magic Item
+      td <a href='http://www.d20pfsrd.com/magic-items/rods/rod-of-flailing'>Rod of Flailing</a>
+      td (50,000 gp) Once / day grants a +4 deflection bonus to AC.
+    tr
+      td.magic_items_bonus Magic Item
+      td <a href='http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/a-b/arrowmaster-s-bracers'>Arrowmaster's Bracers</a>
+      td (13,900 gp) Grants a +1 deflection bonus to AC.
+    tr
+      td.magic_items_bonus Magic Item
+      td <a href='http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/m-p/shoanti-war-paint'>Tribal War Paint (silver)</a>
+      td (900 gp) Grants a +3 deflection bonus to AC.
+    tr
+      td.magic_items_bonus Magic Item
+      td <a href='http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/m-p/orb-of-pure-law'>Orb of Pure Law</a>
+      td (60,000 gp) Grants a +4 deflection bonus to AC against attacks from Chaotic creatures.
+    tr
+      td.magic_items_bonus Magic Item
+      td <a href='http://www.d20pfsrd.com/magic-items/wondrous-items/wondrous-items/h-l/key-of-the-second-vault'>Key of the Second Vault</a>
+      td (3,000 gp) Activate to grant a +2 deflection bonus (<i>only +1 if bearer is chaotic</i>).
+
