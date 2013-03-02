@@ -23,7 +23,8 @@ var menu_items =
         { url: '/def/ac/dodge', title: 'Dodge' },
         { url: '/def/ac/deflection', title: 'Deflection' },
         { url: '/def/ac/insight', title: 'Insight' },
-        { url: '/def/ac/morale', title: 'Morale' }
+        { url: '/def/ac/morale', title: 'Morale' },
+        { url: '/def/ac/luck', title: 'LucK' }
       ]
     },
     { url: '/def/ref', title: 'Reflex' },
