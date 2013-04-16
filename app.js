@@ -13,7 +13,7 @@ app.use(app.router);
 app.use(express.static(__dirname + '/public'));
 app.use(express.errorHandler({showStack:true, dumpExceptions:true}));
 
-var auth = express.basicAuth('gates','M0ng0d8us3r');
+var auth = express.basicAuth('gates','gates');
 
 var testMobile = function(req){
   var regex = /(iphone|ppc|windows ce|blackberry|opera mini|mobile|palm|portable)/i;
